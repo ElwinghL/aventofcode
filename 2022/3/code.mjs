@@ -14,17 +14,11 @@ function commonGround() {
 /**
  * To get our letter priority
  */
-function buildABC() {
-  let ret = {};
-  const abc = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  for (let i = 0; i < abc.length; ++i) {
-    ret[abc[i]] = i + 1;
-  }
-
-  return ret;
+function ABCD(char) {
+  return (
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".indexOf(char) + 1
+  );
 }
-
-const ABCD = buildABC();
 
 /**
  * https://adventofcode.com/2022/day/3
@@ -45,7 +39,7 @@ function solver1() {
         for (let cRight = 0; cRight < rightSide.length; ++cRight) {
           if (leftSide[cLeft] == rightSide[cRight]) {
             // We do our sum with the item prioriry
-            return pSum + ABCD[leftSide[cLeft]];
+            return pSum + ABCD(leftSide[cLeft]);
           }
         }
       }
@@ -81,7 +75,7 @@ function recurseCount(count, list) {
           firstElf[first] == secondElf[second] &&
           firstElf[first] == thirdElf[third]
         )
-          return recurseCount(count + ABCD[firstElf[first]], otherElves);
+          return recurseCount(count + ABCD(firstElf[first]), otherElves);
       }
     }
   }
