@@ -21,7 +21,7 @@ def solver2():
 
 
 
-Allez savoir pourquoi c'est si compliquer d'importer depuis un autre fichier dans python...
+Allez savoir pourquoi c'est si compliqué d'importer depuis un autre fichier dans python...
 """
 def sumUp(l, sum = 0):
     for elem in l:
